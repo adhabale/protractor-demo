@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script >
+var app=angular.module('app',[]);
+app.controller('mycontroller',function($scope){
+console.log('Controller is called');
+$scope.add=function(num1,num2){
+//alert("button is clicked!!");
+$scope.ans=num1+num2;
+}
+});
+</script>
+   </head>
+<body ng-controller="mycontroller">
+<div class="col-md-2"></div>
+<div class="col-md-8 well">
+    <h1>Fill the information required</h1><br>
+    <label>Enter First number</label><br>
+    <input type="number" class="form-control" id="num1" ng-model="num1" ><br>
+    <label>Enter last number</label><br>
+    <input type="number" class="form-control" id="num2" ng-model="num2"><br>
+    <button type="button" id="submit" ng-click="add(num1,num2)">Save</button><br>
+	<p>Your answer is =>{{ans}}</p>
+</div>
+<div class="col-md-2"></div>
+</body>
+</html>
